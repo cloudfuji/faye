@@ -72,7 +72,7 @@ module Faye
       unless request.path_info =~ @endpoint_re
         env['faye.client'] = get_client
         return @app ? @app.call(env) :
-                      [404, TYPE_TEXT, ["Sure you're not looking for #{@endpoint} ?"]]
+                      [404, TYPE_TEXT, ["Sure you're not looking for #{@endpoint} ?"]] #"
       end
       
       return serve_client_script(env) if request.path_info =~ /\.js$/
@@ -124,6 +124,7 @@ module Faye
         response = Faye.to_json(replies)
         response = "#{ jsonp }(#{ response });" if request.get?
         headers['Content-Length'] = response.bytesize.to_s unless request.env[HTTP_X_NO_CONTENT_LENGTH]
+        headers['Connection'] = 'close'
         debug 'Returning ?', response
         callback.call [200, headers, [response]]
       end
