@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name              = "faye"
+  s.name              = "_bushido-faye"
   s.version           = "0.8.1"
   s.summary           = "Simple pub/sub messaging for the web"
   s.author            = "James Coglan"
