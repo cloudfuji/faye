@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = "_bushido-faye"
-  s.version           = "0.8.1"
+  s.version           = "0.8.2"
   s.summary           = "Simple pub/sub messaging for the web"
   s.author            = "James Coglan"
   s.email             = "jcoglan@gmail.com"
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "cookiejar", ">= 0.3.0"
   s.add_dependency "em-http-request", ">= 0.3.0"
   s.add_dependency "eventmachine", ">= 0.12.0"
-  s.add_dependency "faye-websocket", ">= 0.4.0"
+  s.add_dependency "_bushido-faye-websocket", ">= 0.4.0"
   s.add_dependency "rack", ">= 1.0.0"
   s.add_dependency "yajl-ruby", ">= 1.0.0"
 
